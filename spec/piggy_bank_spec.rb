@@ -31,7 +31,18 @@ describe PiggyBank do
       expect {piggy_bank.shake}.not_to raise_error
     end
 
-    it { expect(subject.shake).to eq("cling") }
+    # it "raises an error when no coins" do
+    #   piggy_bank = PiggyBank.new
+    #   expect {piggy_bank.shake}.to eq("No coins")
+    # end
+    it { expect(subject.shake).to eq ("No coins")}
+
+    it "will cling if coins" do
+      piggy_bank = PiggyBank.new
+      piggy_bank.put_coins(2)
+      expect(piggy_bank.shake).to eq ("Cling")
+    end
+    # it { expect(subject.put_coins(2).shake).to eq("Cling") }
   end
 end
 end

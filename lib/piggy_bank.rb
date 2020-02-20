@@ -6,12 +6,13 @@ attr_accessor :total_coins
   end
   def put_coins(coin_number)
     @total_coins += coin_number
-
   end
 
   def shake()
-    "cling"
+    if @total_coins != 0
+      "Cling"
+    else
+      "No coins"
+    end
   end
-
-
 end
